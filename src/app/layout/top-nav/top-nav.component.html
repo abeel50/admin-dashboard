@@ -1,68 +1,46 @@
-<!-- Navbar -->
-<nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-    <!-- Toggle button -->
-    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
-      aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list"></i>
-    </button>
+<header class="py-3 mb-3 border-bottom">
+  <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+    <div class="dropdown">
+      <a href="#"
+        class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-body-emphasis text-decoration-none dropdown-toggle"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+      <ul class="dropdown-menu text-small shadow">
+        <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
+        <li><a class="dropdown-item" href="#">Inventory</a></li>
+        <li><a class="dropdown-item" href="#">Customers</a></li>
+        <li><a class="dropdown-item" href="#">Products</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Reports</a></li>
+        <li><a class="dropdown-item" href="#">Analytics</a></li>
+      </ul>
+    </div>
 
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">
-      <img src="../../../assets/icons/bootstrap.svg" height="40" alt="Bootstrap Logo" loading="lazy" />
-    </a>
-    <!-- Search form -->
-    <form class="d-none d-md-flex input-group w-auto my-auto">
-      <input autocomplete="off" type="search" class="form-control rounded" placeholder='Search'
-        style="min-width: 225px;" />
-      <span class="input-group-text border-0"><i class="bi bi-search m-1"></i></span>
-    </form>
+    <div class="d-flex align-items-center">
+      <form class="w-100 me-3" role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
 
-    <!-- Right links -->
-    <ul class="navbar-nav ms-auto d-flex flex-row">
-      <!-- Notification dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-bell-fill"></i>
-          <!-- <span class="badge rounded-pill badge-notification bg-danger">1</span> -->
+      <div class="flex-shrink-0 dropdown">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
           <li>
-            <a class="dropdown-item" href="#">Some news</a>
+            <hr class="dropdown-divider">
           </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
-      </li>
-
-
-      <!-- Avatar -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
-          role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22"
-            alt="Avatar" loading="lazy" />
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
+</header>

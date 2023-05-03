@@ -3,24 +3,40 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutComponent } from './layout/layout.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideBarComponent } from './layout/side-bar/side-bar.component';
+import { HomeComponent } from './home/home.component';
+import { TableComponent } from './table/table.component';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { CountryService } from './table/country.service';
+import { FormsModule } from '@angular/forms';
+import { NgbdSortableHeader } from './table/sortable.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     TopNavComponent,
-    SideBarComponent
+    SideBarComponent,
+    HomeComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgFor,
+    DecimalPipe,
+    FormsModule,
+    AsyncPipe,
+    NgbTypeaheadModule,
+    NgbdSortableHeader,
+    NgbPaginationModule,
+    NgIf,
   ],
-  providers: [],
+  providers: [CountryService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
