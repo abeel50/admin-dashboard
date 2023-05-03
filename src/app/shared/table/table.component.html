@@ -4,7 +4,7 @@
             <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
             <div class="col-xs-3 col-sm-auto">
                 <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
-                    [(ngModel)]="service.searchTerm" />
+                    placeholder="Search" [(ngModel)]="service.searchTerm" />
             </div>
             <span class="col col-form-label" *ngIf="service.loading$ | async">Loading...</span>
         </div>
