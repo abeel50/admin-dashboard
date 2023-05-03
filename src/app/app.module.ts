@@ -9,10 +9,10 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideBarComponent } from './layout/side-bar/side-bar.component';
 import { HomeComponent } from './home/home.component';
 import { TableComponent } from './table/table.component';
-import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 import { CountryService } from './table/country.service';
 import { FormsModule } from '@angular/forms';
 import { NgbdSortableHeader } from './table/sortable.directive';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,15 +26,12 @@ import { NgbdSortableHeader } from './table/sortable.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     NgbModule,
-    NgFor,
-    DecimalPipe,
     FormsModule,
-    AsyncPipe,
     NgbTypeaheadModule,
     NgbdSortableHeader,
     NgbPaginationModule,
-    NgIf,
   ],
   providers: [CountryService, DecimalPipe],
   bootstrap: [AppComponent]
