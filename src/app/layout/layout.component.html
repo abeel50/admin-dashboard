@@ -1,11 +1,14 @@
-<app-top-nav></app-top-nav>
+<div>
 
-<div class="container-fluid pb-3 ">
-    <div class="d-grid gap-3" style="grid-template-columns: 0.5fr 2fr;">
-        <app-side-bar></app-side-bar>
+    <app-top-nav></app-top-nav>
 
-        <div class="bg-body-tertiary border rounded-3">
-            <router-outlet></router-outlet>
+    <div class="container-fluid pb-3 ">
+        <div class="d-grid gap-3" style="grid-template-columns: 0.5fr 2fr;">
+            <app-side-bar></app-side-bar>
+
+            <div class="bg-body-tertiary border rounded-3">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>
