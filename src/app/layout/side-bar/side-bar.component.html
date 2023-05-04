@@ -10,33 +10,16 @@
       </a>
       <hr>
 
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-            data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-            Config
-          </button>
-          <div class="collapse show" id="home-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/config/slider"
-                  class="link-body-emphasis d-inline-flex text-decoration-none rounded">Slider</a></li>
-              <li><a href="/config/featured-categories"
-                  class="link-body-emphasis d-inline-flex text-decoration-none rounded">Featured Categories</a></li>
-              <!-- <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li> -->
-            </ul>
-          </div>
-        </li>
-      </ul>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
+          <a href="/" class="nav-link active" aria-current="page">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home" />
             </svg>
             Home
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#" class="nav-link link-body-emphasis">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#speedometer2" />
@@ -67,8 +50,31 @@
             </svg>
             Customers
           </a>
+        </li> -->
+      </ul>
+
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            Configuration
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="/config/slider"
+                  class="link-body-emphasis d-inline-flex text-decoration-none rounded">Slider</a>
+              </li>
+              <li>
+                <a href="/config/featured-categories"
+                  class="link-body-emphasis d-inline-flex text-decoration-none rounded">Featured Categories</a>
+              </li>
+              <!-- <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li> -->
+            </ul>
+          </div>
         </li>
       </ul>
+
       <hr>
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
