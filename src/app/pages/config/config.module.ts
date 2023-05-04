@@ -11,6 +11,7 @@ import { LocationsComponent } from './locations/locations.component';
 import { LocationSortableHeader } from './common/location-table/location-sortable.directive';
 import { LocationTableComponent } from './common/location-table/location-table.component';
 import { ProductComponent } from './product/product.component';
+import { ProductSubCategoryTableComponent } from './common/product-sub-category-table/product-sub-category-table.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { ProductComponent } from './product/product.component';
 
   ],
   declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent, ProductComponent,
-    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
+    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent,
+    ProductSubCategoryTableComponent]
 })
 export class ConfigModule { }
