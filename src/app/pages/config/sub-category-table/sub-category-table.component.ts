@@ -1,37 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 
 
-interface Country {
+interface SubCategory {
   name: string;
-  flag: string;
-  area: number;
-  population: number;
 }
 
-const COUNTRIES: Country[] = [
+const SUB_CATEGORIES: SubCategory[] = [
   {
-    name: 'Russia',
-    flag: 'f/f3/Flag_of_Russia.svg',
-    area: 17075200,
-    population: 146989754,
+    name: 'Sub Category-1',
   },
   {
-    name: 'Canada',
-    flag: 'c/cf/Flag_of_Canada.svg',
-    area: 9976140,
-    population: 36624199,
+    name: 'Sub Category-2',
   },
   {
-    name: 'United States',
-    flag: 'a/a4/Flag_of_the_United_States.svg',
-    area: 9629091,
-    population: 324459463,
+    name: 'Sub Category-3',
   },
   {
-    name: 'China',
-    flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-    area: 9596960,
-    population: 1409517397,
+    name: 'Sub Category-4',
+  },
+  {
+    name: 'Sub Category-5',
+  },
+  {
+    name: 'Sub Category-6',
+  },
+  {
+    name: 'Sub Category-7',
+  },
+  {
+    name: 'Sub Category-8',
   },
 ];
 
@@ -48,7 +45,7 @@ export class SubCategoryTableComponent implements OnInit {
 
   ngOnInit() {
   }
-  countries = COUNTRIES;
+  sub_categories = SUB_CATEGORIES;
 
 
 }
