@@ -8,15 +8,18 @@ import { SubCategoryTableComponent } from './common/sub-category-table/sub-categ
 import { CategoryTableComponent } from './common/category-table/category-table.component';
 import { NgbdSortableHeader } from './common/category-table/sortable.directive';
 import { LocationsComponent } from './locations/locations.component';
+import { LocationSortableHeader } from './common/location-table/location-sortable.directive';
+import { LocationTableComponent } from './common/location-table/location-table.component';
 
 @NgModule({
   imports: [
     ConfigRoutingModule,
     SharedModule,
-    NgbdSortableHeader
+    NgbdSortableHeader,
+    LocationSortableHeader
 
   ],
   declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent,
-    SubCategoryTableComponent, CategoryTableComponent]
+    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
 })
 export class ConfigModule { }
