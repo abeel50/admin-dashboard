@@ -8,7 +8,7 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideBarComponent } from './layout/side-bar/side-bar.component';
 import { DecimalPipe } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
-import { CategoryService } from './shared/category-table/category.service';
+import { CategoryService } from './pages/config/category-table/category.service';
 
 @NgModule({
   declarations: [

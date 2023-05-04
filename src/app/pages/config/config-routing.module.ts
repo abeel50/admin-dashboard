@@ -4,6 +4,7 @@ import { SliderComponent } from './slider/slider.component';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 
 const routes: Routes = [
+  { path: '', component: SliderComponent },
   { path: 'slider', component: SliderComponent },
   { path: 'featured-categories', component: FeaturedCategoriesComponent },
 
