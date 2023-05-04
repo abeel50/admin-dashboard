@@ -9,6 +9,7 @@ import { SideBarComponent } from './layout/side-bar/side-bar.component';
 import { DecimalPipe } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { CategoryService } from './pages/config/common/category-table/category.service';
+import { LogInComponent } from './auth/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CategoryService } from './pages/config/common/category-table/category.s
     LayoutComponent,
     TopNavComponent,
     SideBarComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
