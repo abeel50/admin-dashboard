@@ -22,7 +22,6 @@
         <tr *ngFor="let cat of categories$ | async">
           <th scope="row">{{ cat.id }}</th>
           <td>
-            <img [src]="cat.imageUrl" class="me-2" style="width: 20px" />
             <ngb-highlight [result]="cat.title" [term]="service.searchTerm"></ngb-highlight>
           </td>
           <td>{{cat.imageUrl}}</td>
