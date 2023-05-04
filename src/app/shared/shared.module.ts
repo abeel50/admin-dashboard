@@ -4,12 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbTypeaheadModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdSortableHeader } from './table/sortable.directive';
 import { TableComponent } from './table/table.component';
+import { CategoryTableComponent } from './category-table/category-table.component';
 
 
 
 @NgModule({
 
-  declarations: [TableComponent],
+  declarations: [TableComponent, CategoryTableComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -22,7 +23,8 @@ import { TableComponent } from './table/table.component';
 
   ],
   exports: [
-    TableComponent
+    TableComponent,
+    CategoryTableComponent
 
   ]
 })

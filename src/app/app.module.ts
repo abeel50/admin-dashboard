@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CountryService } from './shared/table/country.service';
 import { DecimalPipe } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
+import { CategoryService } from './shared/category-table/category.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SharedModule } from './shared/shared.module';
   exports: [
 
   ],
-  providers: [CountryService, DecimalPipe],
+  providers: [CountryService, CategoryService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
