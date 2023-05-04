@@ -12,8 +12,10 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
+          <th scope="col" sortable="id" (sort)="onSort($event)">#</th>
+          <th scope="col" sortable="title" (sort)="onSort($event)">Title</th>
+          <th scope="col">Image URL</th>
+
         </tr>
       </thead>
       <tbody>
@@ -23,6 +25,7 @@
             <img [src]="cat.imageUrl" class="me-2" style="width: 20px" />
             <ngb-highlight [result]="cat.title" [term]="service.searchTerm"></ngb-highlight>
           </td>
+          <td>{{cat.imageUrl}}</td>
 
         </tr>
       </tbody>
