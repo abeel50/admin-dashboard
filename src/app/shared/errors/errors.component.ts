@@ -7,11 +7,12 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./errors.component.css']
 })
 export class ErrorsComponent implements OnInit {
-  @Input() form_control?: FormControl;
-  @Input() isSubmitted?: string;
+  @Input() form_control: FormControl;
+  @Input() isSubmitted: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

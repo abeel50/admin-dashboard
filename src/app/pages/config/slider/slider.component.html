@@ -1,18 +1,23 @@
-<form style=" width: 100%; margin: 30px 30px;">
+<form [formGroup]="form" style=" width: 100%; margin: 30px 30px;">
   <div class="row">
+    <!-- Title -->
     <div class="form-group col-lg-5">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Title">
+      <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title">
+      <app-errors [form_control]="f['title']" [isSubmitted]="isFormSubmit"></app-errors>
     </div>
+
+    <!-- Image Url -->
     <div class="form-group col-lg-5">
       <label for="imageUrl">Image Url</label>
-      <input type="url" class="form-control" id="imageUrl" placeholder="Image Url">
+      <input formControlName="imageUrl" type="url" class="form-control" id="imageUrl" placeholder="Image Url">
+      <app-errors [form_control]="f['imageUrl']" [isSubmitted]="isFormSubmit"></app-errors>
+
     </div>
+
+    <!-- Save Button -->
     <div class="form-group col-lg-2 mt-4">
-      <button type="submit" class="btn btn-primary">
-        <i class="bi bi-save"></i>
-        Save
-      </button>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()"><i class="bi bi-save"></i>Save</button>
     </div>
 
   </div>
