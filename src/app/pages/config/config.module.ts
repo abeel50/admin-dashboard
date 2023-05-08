@@ -9,6 +9,7 @@ import { NgbdSortableHeader } from './common/category-table/sortable.directive';
 import { LocationsComponent } from './locations/locations.component';
 import { LocationSortableHeader } from './common/location-table/location-sortable.directive';
 import { LocationTableComponent } from './common/location-table/location-table.component';
+import { SliderTableComponent } from './common/slider-table/slider-table.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { LocationTableComponent } from './common/location-table/location-table.c
 
   ],
   declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent,
-    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
+    SliderTableComponent, LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
 })
 export class ConfigModule { }

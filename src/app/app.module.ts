@@ -10,6 +10,7 @@ import { DecimalPipe } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { CategoryService } from './pages/config/common/category-table/category.service';
 import { LogInComponent } from './auth/log-in/log-in.component';
+import { SliderService } from './pages/config/common/slider-table/slider.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { LogInComponent } from './auth/log-in/log-in.component';
   exports: [
 
   ],
-  providers: [CategoryService, DecimalPipe],
+  providers: [CategoryService, SliderService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
