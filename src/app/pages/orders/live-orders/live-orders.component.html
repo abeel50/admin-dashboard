@@ -1,3 +1,69 @@
-<p>
-  live-orders works!
-</p>
+<div class="container-fluid">
+  <button type="button" class="btn btn-primary mb-3 mt-3">Fetch Live Data</button>
+  <div class="row">
+    <div class="form-group mb-3">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Live Orders</h4>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mobile Number</th>
+                  <th>Total Price</th>
+                  <th>Address</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>001</td>
+                  <td>9876543210</td>
+                  <td>$50.00</td>
+                  <td>123 Main Street</td>
+                  <td>
+                    <span class="badge bg-warning">Pending</span>
+                  </td>
+
+                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;<i
+                      class="bi bi-person-up"></i>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>002</td>
+                  <td>9876543210</td>
+                  <td>$25.00</td>
+                  <td>456 Elm Street</td>
+                  <td>
+                    <span class="badge bg-info">Shipped</span>
+                  </td>
+                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;<i
+                      class="bi bi-person-up"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>003</td>
+                  <td>9876543210</td>
+                  <td>$75.00</td>
+                  <td>789 Oak Street</td>
+                  <td>
+                    <span class="badge bg-success">Delivered</span>
+                  </td>
+                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;<i
+                      class="bi bi-person-up"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
