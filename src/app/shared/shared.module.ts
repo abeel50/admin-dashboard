@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule, NgbTypeaheadModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ErrorsComponent } from './errors/errors.component';
 
 
 @NgModule({
 
-  declarations: [],
+  declarations: [ErrorsComponent],
   imports: [
     CommonModule,
     NgbModule,
@@ -24,6 +25,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     NgbTypeaheadModule,
     NgbPaginationModule,
     NgSelectModule,
+
+    // Components
+    ErrorsComponent
   ]
 })
 export class SharedModule { }
