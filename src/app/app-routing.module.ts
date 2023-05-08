@@ -9,9 +9,8 @@ const routes: Routes = [
     path: '', component: LayoutComponent,
     children: [
       { path: '', loadChildren: () => import('../app/pages/config/config.module').then(m => m.ConfigModule), },
-      { path: 'products', loadChildren: () => import('../app/pages/products/products.module').then(m => m.ProductsModule), }
-
-
+      { path: 'products', loadChildren: () => import('../app/pages/products/products.module').then(m => m.ProductsModule), },
+      { path: 'orders', loadChildren: () => import('../app/pages/orders/orders.module').then(m => m.OrdersModule), }
     ]
   },
 ];

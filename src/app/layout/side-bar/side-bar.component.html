@@ -93,6 +93,25 @@
             </ul>
           </div>
         </li>
+
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            (click)="navigateOrders()" data-bs-toggle="collapse" data-bs-target="#order-collapse" aria-expanded="true">
+            Orders
+          </button>
+          <div class="collapse show" id="order-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="/orders/" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Live Orders</a>
+              </li>
+              <li>
+                <a href="/orders/detail" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Order
+                  detail
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

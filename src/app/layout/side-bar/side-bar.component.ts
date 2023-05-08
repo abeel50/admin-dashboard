@@ -15,7 +15,10 @@ export class SideBarComponent implements OnInit {
 
   navigateProducts() {
     this.router.navigate(['/products/'])
+  }
 
+  navigateOrders() {
+    this.router.navigate(['/orders/'])
   }
 
 }
