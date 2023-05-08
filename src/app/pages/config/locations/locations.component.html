@@ -1,11 +1,12 @@
-<form style="width: 100%; margin: 30px 30px;">
+<form [formGroup]="form" style="width: 100%; margin: 30px 30px;">
   <div class="row">
     <div class="form-group col-lg-10">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Title">
+      <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title">
+      <app-errors [form_control]="f['title']" [isSubmitted]="isFormSubmit"></app-errors>
     </div>
     <div class="form-group col-lg-2 mt-4">
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">
         <i class="bi bi-save"></i>
         Save
       </button>
