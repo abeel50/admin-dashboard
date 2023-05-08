@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 import { SliderComponent } from './slider/slider.component';
 import { ConfigRoutingModule } from './config-routing.module';
@@ -10,8 +9,6 @@ import { NgbdSortableHeader } from './common/category-table/sortable.directive';
 import { LocationsComponent } from './locations/locations.component';
 import { LocationSortableHeader } from './common/location-table/location-sortable.directive';
 import { LocationTableComponent } from './common/location-table/location-table.component';
-import { ProductComponent } from './product/product.component';
-import { ProductSubCategoryTableComponent } from './common/product-sub-category-table/product-sub-category-table.component';
 
 @NgModule({
   imports: [
@@ -21,8 +18,7 @@ import { ProductSubCategoryTableComponent } from './common/product-sub-category-
     LocationSortableHeader
 
   ],
-  declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent, ProductComponent,
-    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent,
-    ProductSubCategoryTableComponent]
+  declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent,
+    LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
 })
 export class ConfigModule { }

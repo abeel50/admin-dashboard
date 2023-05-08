@@ -65,9 +65,31 @@
               <li>
                 <a href="/locations" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Locations</a>
               </li>
+
+            </ul>
+          </div>
+        </li>
+
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            (click)="navigateProducts()" data-bs-toggle="collapse" data-bs-target="#product-collapse"
+            aria-expanded="true">
+            Products
+          </button>
+          <div class="collapse show" id="product-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li>
-                <a href="/products" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Products</a>
+                <a href="/products/" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Products</a>
               </li>
+              <li>
+                <a href="/products/add" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Add
+                  Product</a>
+              </li>
+              <li>
+                <a href="/products/update-list"
+                  class="link-body-emphasis d-inline-flex text-decoration-none rounded">Update price</a>
+              </li>
+
             </ul>
           </div>
         </li>

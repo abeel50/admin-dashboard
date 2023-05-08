@@ -3,11 +3,11 @@ import { PRODUCT_CATEGORIES } from 'src/app/_constants';
 import { ProductCategory } from 'src/app/_interfaces';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-add-product',
+  templateUrl: './add-product.component.html',
+  styleUrls: ['./add-product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class AddProductComponent implements OnInit {
 
   constructor() { }
 
