@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Slider } from 'src/app/_interfaces';
 import Swal from 'sweetalert2'
 
 
@@ -37,6 +38,12 @@ export class SliderComponent implements OnInit {
       return;
     }
     Swal.fire('', `${JSON.stringify(this.form.value)}`, 'info')
+  }
+
+  // Edit Form Event Catcher
+  editClick(s: Slider) {
+    this.isFormSubmit = false;
+    this.form.patchValue(s);
   }
 
 }

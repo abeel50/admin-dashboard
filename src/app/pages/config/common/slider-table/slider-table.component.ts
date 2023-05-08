@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Slider } from 'src/app/_interfaces';
 import { SliderService } from './slider.service';
@@ -10,6 +10,8 @@ import { SliderService } from './slider.service';
 })
 export class SliderTableComponent implements OnInit {
 
+  @Output() editSlider = new EventEmitter();
+
   sliders$: Observable<Slider[]>;
   total$: Observable<number>;
 
@@ -20,6 +22,11 @@ export class SliderTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  onEditClick(slider: Slider) {
+    this.editSlider.emit(slider);
   }
 
 
