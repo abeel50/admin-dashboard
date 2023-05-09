@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { CategoryService } from './pages/config/common/category-table/category.service';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { SliderService } from './pages/config/common/slider-table/slider.service';
+import { LocationService } from './pages/config/common/location-table/location.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SliderService } from './pages/config/common/slider-table/slider.service
   exports: [
 
   ],
-  providers: [CategoryService, SliderService, DecimalPipe],
+  providers: [CategoryService, SliderService, LocationService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
