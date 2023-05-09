@@ -6,3 +6,4 @@ export * from './featuredCategory';
 export * from './featSubCategory';
 export * from './location';
 export * from './product';
+export * from './packing';
