@@ -45,8 +45,6 @@ export class AddProductComponent implements OnInit {
       if (value && value > 0) {
         this.packingForm.controls['weight'].enable();
         this.packingForm.controls['info'].enable();
-        //  this.packingForm.controls['price'].enable();
-
       }
     });
 
@@ -65,7 +63,6 @@ export class AddProductComponent implements OnInit {
     this.pf['weight'].valueChanges.subscribe((value) => {
       if (value && value > 0) {
         this.pf['price'].setValue(this.pf['weight'].value * this.f['defaultPrice'].value);
-
       }
     });
   }
