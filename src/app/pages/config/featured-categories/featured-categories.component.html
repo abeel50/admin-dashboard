@@ -20,7 +20,34 @@
 
   </div>
 
-  <app-sub-category-form [form_control]="f['subCategories']"></app-sub-category-form>
+  <!-- Sub Category Form -->
+  <div [formGroup]="subForm" class="row mt-3">
+
+    <div class="form-group col-lg-4">
+      <label class="mb-1" for="title">Sub Category</label>
+      <input formControlName="title" type="text" class="form-control" id="Sub Category" placeholder="Sub Category">
+      <app-errors [form_control]="sf['title']" [isSubmitted]="isSubCategoryFormSubmit"></app-errors>
+
+    </div>
+
+    <div class="form-group col-lg-2 mt-4 offset-1">
+      <button type="button" class="btn btn-primary" (click)="onSubmitSubForm()">
+        <i class="bi bi-plus-circle"></i>
+        Add
+      </button>
+    </div>
+
+  </div>
+  <!-- End of Sub Category form -->
+
+  <!-- Sub Category Table -->
+  <div class="row">
+    <div class="form-group col-lg-6 mt-2">
+      <app-sub-category-table [sub_categories]="subCat" (deleteSubCategory)="deleteSubCategory($event)">
+      </app-sub-category-table>
+    </div>
+  </div>
+
 
   <button type="submit" class="btn btn-primary btn-lg mt-3" (click)="onSubmit()">
     <i class="bi bi-save"></i>&nbsp;{{buttonTitle}}

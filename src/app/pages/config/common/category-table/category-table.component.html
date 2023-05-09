@@ -29,7 +29,7 @@
           </td>
           <td>{{cat.imageUrl}}</td>
           <td>{{cat.package | isPackagePipe}}</td>
-          <td>{{cat.subCategories}}</td>
+          <td>{{getIds(cat.subCategories)}}</td>
 
           <td>
             <i class="bi bi-pencil" (click)="onEditClick(cat)"></i>

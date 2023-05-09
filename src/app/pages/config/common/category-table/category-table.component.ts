@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { CategoryService } from './category.service';
-import { FeaturedCategory } from 'src/app/_interfaces';
+import { FeaturedCategory, FeaturedSubCategory } from 'src/app/_interfaces';
 
 @Component({
   selector: 'app-category-table',
@@ -23,6 +23,10 @@ export class CategoryTableComponent {
 
   onEditClick(fc: FeaturedCategory) {
     this.editFeatured.emit(fc);
+  }
+
+  getIds(subCat: FeaturedSubCategory[]) {
+    return subCat.map(obj => obj.id);
   }
 
 

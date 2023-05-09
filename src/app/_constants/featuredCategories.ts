@@ -1,4 +1,5 @@
 import { FeaturedCategory } from '../_interfaces';
+import { FEATURED_SUB_CATEGORIES } from './featuredSubCategories';
 
 export const FEATURED_CATEGORIES: FeaturedCategory[] = [
     {
@@ -6,7 +7,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-1',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
     },
     {
         id: 2,
@@ -14,7 +15,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         imageUrl: 'https://picsum.photos/200',
         package: false,
 
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -22,8 +23,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-3',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -31,8 +31,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-4',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -40,8 +39,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-5',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -49,8 +47,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-6',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -58,8 +55,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-7',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -67,8 +63,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-8',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -76,8 +71,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-9',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -85,8 +79,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-10',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -94,8 +87,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-11',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
     {
@@ -103,8 +95,7 @@ export const FEATURED_CATEGORIES: FeaturedCategory[] = [
         title: 'Featured Category-12',
         imageUrl: 'https://picsum.photos/200',
         package: true,
-
-        subCategories: [1, 2, 3, 4],
+        subCategories: FEATURED_SUB_CATEGORIES.slice(0, 4),
 
     },
 

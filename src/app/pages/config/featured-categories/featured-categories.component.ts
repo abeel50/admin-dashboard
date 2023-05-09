@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FeaturedCategory } from 'src/app/_interfaces';
+import { FeaturedCategory, FeaturedSubCategory } from 'src/app/_interfaces';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,10 +13,16 @@ export class FeaturedCategoriesComponent implements OnInit {
   form: FormGroup;
   buttonTitle: string = "Save";
 
+  // Sub Form
+  isSubCategoryFormSubmit: boolean = false;
+  subForm: FormGroup;
+  subCat: FeaturedSubCategory[] = [];
+
   constructor(private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
     this.create();
+    this.createSubForm();
   }
 
   create() {
@@ -33,8 +39,6 @@ export class FeaturedCategoriesComponent implements OnInit {
   // Save/edit button
   onSubmit() {
     this.isFormSubmit = true;
-    console.log(this.form.value);
-
 
     if (this.form.invalid) {
       return;
@@ -47,8 +51,35 @@ export class FeaturedCategoriesComponent implements OnInit {
     this.isFormSubmit = false;
     this.buttonTitle = "Edit";
     this.form.patchValue(fc);
-    console.log(this.form.value);
+    this.subCat = fc.subCategories;
+  }
 
+
+  createSubForm() {
+    this.subForm = this.formBuilder.group({
+      title: [null, [Validators.required]],
+    });
+  }
+
+  get sf() { return this.subForm.controls; }
+
+
+  // Save button
+  onSubmitSubForm() {
+    this.isSubCategoryFormSubmit = true;
+
+    if (this.subForm.invalid) {
+      return;
+    }
+    this.subCat.push({ id: this.subCat.length + 1, title: this.sf['title'].value });
+    this.subForm.reset();
+    this.isSubCategoryFormSubmit = false;
+
+  }
+
+
+  deleteSubCategory(e: number) {
+    this.subCat = this.subCat.filter(item => item.id !== e);
   }
 
 }
