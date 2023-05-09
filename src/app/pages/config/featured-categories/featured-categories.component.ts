@@ -23,7 +23,7 @@ export class FeaturedCategoriesComponent implements OnInit {
       title: [null, [Validators.required]],
       imageUrl: [null, [Validators.required, Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/)]],
       package: [false],
-      subCategories: [null, Validators.required]
+      subCategories: []
     });
   }
 
@@ -32,6 +32,8 @@ export class FeaturedCategoriesComponent implements OnInit {
   // Save/edit button
   onSubmit() {
     this.isFormSubmit = true;
+    console.log(this.form.value);
+
 
     if (this.form.invalid) {
       return;

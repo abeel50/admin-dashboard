@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { FeaturedSubCategory } from 'src/app/_interfaces';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sub-category-form',
@@ -9,6 +8,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sub-category-form.component.css']
 })
 export class SubCategoryFormComponent implements OnInit {
+  @Input() form_control: FormControl;
+
 
   isFormSubmit: boolean = false;
   form: FormGroup;
@@ -38,12 +39,14 @@ export class SubCategoryFormComponent implements OnInit {
       return;
     }
     this.subCat.push({ id: this.subCat.length + 1, title: this.f['title'].value })
+    this.form_control.setValue(this.subCat);
 
   }
 
 
   deleteSubCategory(e: number) {
     this.subCat = this.subCat.filter(item => item.id !== e);
+    this.form_control.setValue(this.subCat);
   }
 
 }
