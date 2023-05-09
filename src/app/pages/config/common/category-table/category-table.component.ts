@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { CategoryService } from './category.service';
 import { FeaturedCategory } from 'src/app/_interfaces';
@@ -9,6 +9,8 @@ import { FeaturedCategory } from 'src/app/_interfaces';
   styleUrls: ['./category-table.component.css']
 })
 export class CategoryTableComponent {
+  @Output() editFeatured = new EventEmitter();
+
 
   categories$: Observable<FeaturedCategory[]>;
   total$: Observable<number>;
@@ -19,16 +21,9 @@ export class CategoryTableComponent {
     this.total$ = service.total$;
   }
 
-  // onSort({ column, direction }: SortEvent) {
-  //   // resetting other headers
-  //   this.headers.forEach((header) => {
-  //     if (header.sortable !== column) {
-  //       header.direction = '';
-  //     }
-  //   });
+  onEditClick(fc: FeaturedCategory) {
+    this.editFeatured.emit(fc);
+  }
 
-  //   this.service.sortColumn = column;
-  //   this.service.sortDirection = direction;
-  // }
 
 }

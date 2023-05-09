@@ -4,11 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbTypeaheadModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ErrorsComponent } from './errors/errors.component';
+import { IsPackagePipePipe } from './pipes/isPackage-pipe.pipe';
 
 
 @NgModule({
 
-  declarations: [ErrorsComponent],
+  declarations: [
+    ErrorsComponent,
+
+    // Pipes
+    IsPackagePipePipe
+  ],
   imports: [
     CommonModule,
     NgbModule,
@@ -29,7 +35,10 @@ import { ErrorsComponent } from './errors/errors.component';
     NgSelectModule,
 
     // Components
-    ErrorsComponent
+    ErrorsComponent,
+
+    //Pipes
+    IsPackagePipePipe
   ]
 })
 export class SharedModule { }

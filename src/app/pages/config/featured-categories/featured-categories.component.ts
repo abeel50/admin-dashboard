@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FeaturedCategory } from 'src/app/_interfaces';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -41,5 +42,13 @@ export class FeaturedCategoriesComponent implements OnInit {
     Swal.fire('', `${JSON.stringify(this.form.value)}`, 'info')
   }
 
+  // Edit Form Event Catcher
+  editClick(fc: FeaturedCategory) {
+    this.isFormSubmit = false;
+    this.buttonTitle = "Edit";
+    this.form.patchValue(fc);
+    console.log(this.form.value);
+
+  }
 
 }
