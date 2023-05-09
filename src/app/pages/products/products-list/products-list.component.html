@@ -21,7 +21,7 @@
           <tr *ngFor="let product of products">
             <td>{{product.title_english}}</td>
             <td>{{product.title_urdu}}</td>
-            <td>{{product.category}}</td>
+            <td>{{product.category | productCategoryPipe}}</td>
             <td>{{product.defaultPrice | currency}}</td>
             <td> {{product.imageUrl}} </td>
             <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
