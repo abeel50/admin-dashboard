@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from 'src/app/_interfaces';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,6 +12,7 @@ export class LocationsComponent implements OnInit {
 
   isFormSubmit: boolean = false;
   form: FormGroup;
+  buttonTitle: string = "Save";
 
   constructor(private formBuilder: FormBuilder,) { }
 
@@ -37,5 +39,11 @@ export class LocationsComponent implements OnInit {
     Swal.fire('', `${JSON.stringify(this.form.value)}`, 'info')
   }
 
+  // Edit Form Event Catcher
+  editClick(l: Location) {
+    this.isFormSubmit = false;
+    this.buttonTitle = "Edit";
+    this.form.patchValue(l);
+  }
 
 }

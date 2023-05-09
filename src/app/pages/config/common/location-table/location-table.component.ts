@@ -1,8 +1,7 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LocationSortableHeader, SortEvent } from './location-sortable.directive';
 import { LocationService } from './location.service';
-import { Location } from './location';
+import { Location } from '../../../../_interfaces/location';
 
 @Component({
   selector: 'app-location-table',
@@ -11,27 +10,19 @@ import { Location } from './location';
 })
 export class LocationTableComponent {
 
+  @Output() editLocation = new EventEmitter();
+
   locations$: Observable<Location[]>;
   total$: Observable<number>;
 
-  @ViewChildren(LocationSortableHeader)
-  headers!: QueryList<LocationSortableHeader>;
 
   constructor(public service: LocationService) {
     this.locations$ = service.locations$;
     this.total$ = service.total$;
   }
 
-  onSort({ column, direction }: SortEvent) {
-    // resetting other headers
-    this.headers.forEach((header) => {
-      if (header.sortable !== column) {
-        header.direction = '';
-      }
-    });
-
-    this.service.sortColumn = column;
-    this.service.sortDirection = direction;
+  onEditClick(location: Location) {
+    this.editLocation.emit(location);
   }
 
 }

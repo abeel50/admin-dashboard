@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Injectable, PipeTransform } from '@angular/core';
 
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
-import { Location } from './location';
-import { LOCATIONS } from './locations';
+import { Location } from '../../../../_interfaces/location';
+import { LOCATIONS } from '../../../../_constants/locations';
 import { DecimalPipe } from '@angular/common';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
-import { SortColumn, SortDirection } from './location-sortable.directive';
 
 interface SearchResult {
     locations: Location[];
@@ -18,22 +16,10 @@ interface State {
     page: number;
     pageSize: number;
     searchTerm: string;
-    sortColumn: SortColumn;
-    sortDirection: SortDirection;
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(locations: Location[], column: SortColumn, direction: string): Location[] {
-    if (direction === '' || column === '') {
-        return locations;
-    } else {
-        return [...locations].sort((a, b) => {
-            const res = compare(a[column], b[column]);
-            return direction === 'asc' ? res : -res;
-        });
-    }
-}
 
 function matches(location: Location, term: string, pipe: PipeTransform) {
     return (
@@ -52,8 +38,6 @@ export class LocationService {
         page: 1,
         pageSize: 5,
         searchTerm: '',
-        sortColumn: '',
-        sortDirection: '',
     };
 
     constructor(private pipe: DecimalPipe) {
@@ -101,12 +85,6 @@ export class LocationService {
     set searchTerm(searchTerm: string) {
         this._set({ searchTerm });
     }
-    set sortColumn(sortColumn: SortColumn) {
-        this._set({ sortColumn });
-    }
-    set sortDirection(sortDirection: SortDirection) {
-        this._set({ sortDirection });
-    }
 
     private _set(patch: Partial<State>) {
         Object.assign(this._state, patch);
@@ -114,13 +92,10 @@ export class LocationService {
     }
 
     private _search(): Observable<SearchResult> {
-        const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
-
-        // 1. sort
-        let locations = sort(LOCATIONS, sortColumn, sortDirection);
+        const { pageSize, page, searchTerm } = this._state;
 
         // 2. filter
-        locations = locations.filter((country) => matches(country, searchTerm, this.pipe));
+        let locations = LOCATIONS.filter((loc) => matches(loc, searchTerm, this.pipe));
         const total = locations.length;
 
         // 3. paginate

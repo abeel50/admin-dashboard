@@ -24,7 +24,9 @@
           <td>
             <ngb-highlight [result]="loc.title" [term]="service.searchTerm"></ngb-highlight>
           </td>
-          <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
+          <td>
+            <i class="bi bi-pencil" (click)="onEditClick(loc)"></i>
+            &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
           </td>
 
         </tr>
