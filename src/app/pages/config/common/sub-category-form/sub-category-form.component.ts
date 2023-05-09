@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { FeaturedSubCategory } from 'src/app/_interfaces';
 
@@ -7,7 +7,8 @@ import { FeaturedSubCategory } from 'src/app/_interfaces';
   templateUrl: './sub-category-form.component.html',
   styleUrls: ['./sub-category-form.component.css']
 })
-export class SubCategoryFormComponent implements OnInit {
+export class SubCategoryFormComponent implements OnInit, OnChanges {
+
   @Input() form_control: FormControl;
 
 
@@ -16,10 +17,23 @@ export class SubCategoryFormComponent implements OnInit {
 
   subCat: FeaturedSubCategory[] = [];
 
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: FormBuilder,) {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('in changes');
+
+    if (changes['form_control']) {
+
+      console.log(changes['form_control'].currentValue);
+    }
+  }
 
   ngOnInit() {
     this.create();
+
+    // this.subCat = this.form_control.value;
   }
 
   create() {
@@ -38,8 +52,10 @@ export class SubCategoryFormComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.subCat.push({ id: this.subCat.length + 1, title: this.f['title'].value })
+    this.subCat.push({ id: this.subCat.length + 1, title: this.f['title'].value });
     this.form_control.setValue(this.subCat);
+    this.form.reset();
+    this.isFormSubmit = false;
 
   }
 
