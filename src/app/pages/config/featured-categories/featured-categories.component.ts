@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-featured-categories',
@@ -6,10 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./featured-categories.component.css']
 })
 export class FeaturedCategoriesComponent implements OnInit {
+  isFormSubmit: boolean = false;
+  form: FormGroup;
+  buttonTitle: string = "Save";
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
+    this.create();
   }
+
+  create() {
+    this.form = this.formBuilder.group({
+      title: [null, [Validators.required]],
+      imageUrl: [null, [Validators.required, Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/)]],
+      package: [false],
+      subCategories: [null, Validators.required]
+    });
+  }
+
+  get f() { return this.form.controls; }
+
+  // Save/edit button
+  onSubmit() {
+    this.isFormSubmit = true;
+
+    if (this.form.invalid) {
+      return;
+    }
+    Swal.fire('', `${JSON.stringify(this.form.value)}`, 'info')
+  }
+
 
 }

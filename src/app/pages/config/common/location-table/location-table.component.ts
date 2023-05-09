@@ -1,7 +1,6 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NgbdSortableHeader } from '../category-table/sortable.directive';
-import { SortEvent } from './location-sortable.directive';
+import { LocationSortableHeader, SortEvent } from './location-sortable.directive';
 import { LocationService } from './location.service';
 import { Location } from './location';
 
@@ -15,8 +14,8 @@ export class LocationTableComponent {
   locations$: Observable<Location[]>;
   total$: Observable<number>;
 
-  @ViewChildren(NgbdSortableHeader)
-  headers!: QueryList<NgbdSortableHeader>;
+  @ViewChildren(LocationSortableHeader)
+  headers!: QueryList<LocationSortableHeader>;
 
   constructor(public service: LocationService) {
     this.locations$ = service.locations$;

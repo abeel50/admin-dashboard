@@ -13,6 +13,7 @@ export class SliderComponent implements OnInit {
 
   isFormSubmit: boolean = false;
   form: FormGroup;
+  buttonTitle: string = "Save";
 
   constructor(private formBuilder: FormBuilder,) { }
 
@@ -43,6 +44,7 @@ export class SliderComponent implements OnInit {
   // Edit Form Event Catcher
   editClick(s: Slider) {
     this.isFormSubmit = false;
+    this.buttonTitle = "Edit";
     this.form.patchValue(s);
   }
 

@@ -12,9 +12,10 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col" sortable="id" (sort)="onSort($event)">#</th>
-          <th scope="col" sortable="title" (sort)="onSort($event)">Title</th>
+          <th scope="col" sortable="id">#</th>
+          <th scope="col" sortable="title">Title</th>
           <th scope="col">Image URL</th>
+          <th scope="col">Sub Categories</th>
           <th scope="col">Actions</th>
 
         </tr>
@@ -26,6 +27,7 @@
             <ngb-highlight [result]="cat.title" [term]="service.searchTerm"></ngb-highlight>
           </td>
           <td>{{cat.imageUrl}}</td>
+          <td>{{cat.subCategories}}</td>
 
           <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
           </td>

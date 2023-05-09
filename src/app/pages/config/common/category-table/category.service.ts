@@ -3,14 +3,13 @@ import { Injectable, PipeTransform } from '@angular/core';
 
 import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
-import { Category } from './category';
-import { CATEGORIES } from './categories';
 import { DecimalPipe } from '@angular/common';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
-import { SortColumn, SortDirection } from './sortable.directive';
+import { FeaturedCategory } from 'src/app/_interfaces';
+import { FEATURED_CATEGORIES } from 'src/app/_constants';
 
 interface SearchResult {
-    categories: Category[];
+    categories: FeaturedCategory[];
     total: number;
 }
 
@@ -18,24 +17,23 @@ interface State {
     page: number;
     pageSize: number;
     searchTerm: string;
-    sortColumn: SortColumn;
-    sortDirection: SortDirection;
+
 }
 
 const compare = (v1: string | number, v2: string | number) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
 
-function sort(categories: Category[], column: SortColumn, direction: string): Category[] {
-    if (direction === '' || column === '') {
-        return categories;
-    } else {
-        return [...categories].sort((a, b) => {
-            const res = compare(a[column], b[column]);
-            return direction === 'asc' ? res : -res;
-        });
-    }
-}
+// function sort(categories: FeaturedCategory[], column: SortColumn, direction: string): FeaturedCategory[] {
+//     if (direction === '' || column === '') {
+//         return categories;
+//     } else {
+//         return [...categories].sort((a, b) => {
+//             const res = compare(a[column], b[column]);
+//             return direction === 'asc' ? res : -res;
+//         });
+//     }
+// }
 
-function matches(category: Category, term: string, pipe: PipeTransform) {
+function matches(category: FeaturedCategory, term: string, pipe: PipeTransform) {
     return (
         category.title.toLowerCase().includes(term.toLowerCase())
     );
@@ -45,15 +43,13 @@ function matches(category: Category, term: string, pipe: PipeTransform) {
 export class CategoryService {
     private _loading$ = new BehaviorSubject<boolean>(true);
     private _search$ = new Subject<void>();
-    private _categories$ = new BehaviorSubject<Category[]>([]);
+    private _categories$ = new BehaviorSubject<FeaturedCategory[]>([]);
     private _total$ = new BehaviorSubject<number>(0);
 
     private _state: State = {
         page: 1,
         pageSize: 5,
         searchTerm: '',
-        sortColumn: '',
-        sortDirection: '',
     };
 
     constructor(private pipe: DecimalPipe) {
@@ -101,12 +97,7 @@ export class CategoryService {
     set searchTerm(searchTerm: string) {
         this._set({ searchTerm });
     }
-    set sortColumn(sortColumn: SortColumn) {
-        this._set({ sortColumn });
-    }
-    set sortDirection(sortDirection: SortDirection) {
-        this._set({ sortDirection });
-    }
+
 
     private _set(patch: Partial<State>) {
         Object.assign(this._state, patch);
@@ -114,13 +105,13 @@ export class CategoryService {
     }
 
     private _search(): Observable<SearchResult> {
-        const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
+        const { pageSize, page, searchTerm } = this._state;
 
         // 1. sort
-        let categories = sort(CATEGORIES, sortColumn, sortDirection);
+        // let categories = sort(FEATURED_CATEGORIES, sortColumn, sortDirection);
 
         // 2. filter
-        categories = categories.filter((country) => matches(country, searchTerm, this.pipe));
+        let categories = FEATURED_CATEGORIES.filter((cat) => matches(cat, searchTerm, this.pipe));
         const total = categories.length;
 
         // 3. paginate
