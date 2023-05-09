@@ -8,6 +8,7 @@ import { CategoryTableComponent } from './common/category-table/category-table.c
 import { LocationsComponent } from './locations/locations.component';
 import { LocationTableComponent } from './common/location-table/location-table.component';
 import { SliderTableComponent } from './common/slider-table/slider-table.component';
+import { SubCategoryFormComponent } from './common/sub-category-form/sub-category-form.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SliderTableComponent } from './common/slider-table/slider-table.compone
 
   ],
   declarations: [FeaturedCategoriesComponent, SliderComponent, LocationsComponent,
+    SubCategoryFormComponent,
     SliderTableComponent, LocationTableComponent, SubCategoryTableComponent, CategoryTableComponent]
 })
 export class ConfigModule { }
