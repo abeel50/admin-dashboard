@@ -12,54 +12,18 @@
             <th>Title (English)</th>
             <th>Title (Urdu)</th>
             <th>Category</th>
-            <th>Sub-Category</th>
+            <th>Default-Price</th>
             <th>Image URL</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Product 1 (English)</td>
-            <td>مصنوعات 1 (Urdu)</td>
-            <td>Category 1</td>
-            <td>Sub-Category 1</td>
-            <td>https://dummyimage.com/100x100/000/fff.png</td>
-            <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Product 2 (English)</td>
-            <td>مصنوعات 2 (Urdu)</td>
-            <td>Category 2</td>
-            <td>Sub-Category 2</td>
-            <td>https://dummyimage.com/100x100/000/fff.png</td>
-            <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Product 3 (English)</td>
-            <td>مصنوعات 3 (Urdu)</td>
-            <td>Category 3</td>
-            <td>Sub-Category 3</td>
-            <td>https://dummyimage.com/100x100/000/fff.png</td>
-            <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Product 4 (English)</td>
-            <td>مصنوعات 4 (Urdu)</td>
-            <td>Category 4</td>
-            <td>Sub-Category 4</td>
-            <td>https://dummyimage.com/100x100/000/fff.png</td>
-            <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Product 5 (English)</td>
-            <td>مصنوعات 5 (Urdu)</td>
-            <td>Category 5</td>
-            <td>Sub-Category 5</td>
-            <td>https://dummyimage.com/100x100/000/fff.png</td>
+          <tr *ngFor="let product of products">
+            <td>{{product.title_english}}</td>
+            <td>{{product.title_urdu}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.defaultPrice | currency}}</td>
+            <td> {{product.imageUrl}} </td>
             <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
             </td>
           </tr>
