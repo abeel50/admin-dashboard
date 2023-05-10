@@ -21,44 +21,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>001</td>
-                  <td>9876543210</td>
-                  <td>$50.00</td>
-                  <td>123 Main Street</td>
+                <tr *ngFor="let ord of _orders">
+                  <td>{{ord.id}}</td>
+                  <td> {{ord.phone}} </td>
+                  <td> {{ord.totalPrice | currency}} </td>
+                  <td> {{ord.address}} </td>
                   <td>
-                    <span class="badge bg-warning">Pending</span>
+                    <app-order-status [status]="ord.status"></app-order-status>
                   </td>
-
-                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;
-                    <i class="bi bi-person-up" (click)="openAssignModal()"></i>
-                  </td>
-
-                </tr>
-                <tr>
-                  <td>002</td>
-                  <td>9876543210</td>
-                  <td>$25.00</td>
-                  <td>456 Elm Street</td>
                   <td>
-                    <span class="badge bg-info">In Transit</span>
-                  </td>
-                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;
+                    <i class="bi bi-eye" style="color: #0d6efd;" (click)="navigateOrderDetail()"></i>
+                    &nbsp;&nbsp;&nbsp;
                     <i class="bi bi-person-up" (click)="openAssignModal()"></i>
-
-                  </td>
-                </tr>
-                <tr>
-                  <td>003</td>
-                  <td>9876543210</td>
-                  <td>$75.00</td>
-                  <td>789 Oak Street</td>
-                  <td>
-                    <span class="badge bg-success">Delivered</span>
-                  </td>
-                  <td><i class="bi bi-eye" style="color: #0d6efd;"></i> &nbsp;&nbsp;&nbsp;
-                    <i class="bi bi-person-up" (click)="openAssignModal()"></i>
-
                   </td>
                 </tr>
               </tbody>

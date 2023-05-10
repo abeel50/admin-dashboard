@@ -7,3 +7,4 @@ export * from './featSubCategory';
 export * from './location';
 export * from './product';
 export * from './packing';
+export * from './order'; 

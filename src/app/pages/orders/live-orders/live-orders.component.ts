@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { DeliveryGuy } from 'src/app/_interfaces';
+import { ORDERS } from 'src/app/_constants/orders';
+import { DeliveryGuy, Order } from 'src/app/_interfaces';
 
 @Component({
   selector: 'app-live-orders',
@@ -9,12 +11,15 @@ import { DeliveryGuy } from 'src/app/_interfaces';
 })
 export class LiveOrdersComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  @ViewChild('assignDeliveryGuyModal', { static: false }) assignModal: any;
+  _orders: Order[] = ORDERS;
+
+
+  constructor(private modalService: NgbModal, private router: Router) { }
 
   ngOnInit() {
   }
 
-  @ViewChild('assignDeliveryGuyModal', { static: false }) assignModal: any;
 
   deliveryGuys: DeliveryGuy[] = [
     { id: 1, name: 'Delivery Guy 1' },
@@ -30,6 +35,10 @@ export class LiveOrdersComponent implements OnInit {
 
   confirm() {
     this.modalService.dismissAll(this.assignModal);
+  }
+
+  navigateOrderDetail() {
+    this.router.navigate(['/orders/detail']);
   }
 
 

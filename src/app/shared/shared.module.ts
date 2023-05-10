@@ -6,6 +6,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { ErrorsComponent } from './errors/errors.component';
 import { IsPackagePipe } from './pipes/isPackage.pipe';
 import { ProductCategoryPipe } from './pipes/product-category.pipe';
+import { OrderStatusPipe } from './pipes/orderStatus.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProductCategoryPipe } from './pipes/product-category.pipe';
 
     // Pipes
     IsPackagePipe,
-    ProductCategoryPipe
+    ProductCategoryPipe,
+    OrderStatusPipe
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ import { ProductCategoryPipe } from './pipes/product-category.pipe';
     //Pipes
     IsPackagePipe,
     ProductCategoryPipe,
+    OrderStatusPipe
   ]
 })
 export class SharedModule { }
