@@ -12,6 +12,7 @@ import { CategoryService } from './pages/config/common/category-table/category.s
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { SliderService } from './pages/config/common/slider-table/slider.service';
 import { LocationService } from './pages/config/common/location-table/location.service';
+import { DeliveryService } from './pages/delivery-riders/riders-table/rider.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LocationService } from './pages/config/common/location-table/location.s
   exports: [
 
   ],
-  providers: [CategoryService, SliderService, LocationService, DecimalPipe],
+  providers: [CategoryService, SliderService, LocationService, DeliveryService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
