@@ -1,1 +1,44 @@
-<app-riders-table></app-riders-table>
+<div class="container">
+    <h4 class="text mb-3 mt-2">Delivery Guy Form</h4>
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="form-group row">
+                    <div class="form-group col-lg-12">
+                        <label class="mb-2" for="name">Name</label>
+                        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name">
+                        <app-errors [form_control]="f['name']" [isSubmitted]="isFormSubmit"></app-errors>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label class="mb-2" for="cnic">CNIC</label>
+                        <input formControlName="cnic" type="text" class="form-control" id="cnic" placeholder="CNIC">
+                        <app-errors [form_control]="f['cnic']" [isSubmitted]="isFormSubmit"></app-errors>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label class="mb-2" for="phone">Phone</label>
+                        <input formControlName="phone" type="text" class="form-control" id="phone"
+                            placeholder="Phone Number">
+                        <app-errors [form_control]="f['phone']" [isSubmitted]="isFormSubmit"></app-errors>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <img [src]="f['imageURL'].value" class="mt-2" alt="dummy image">
+                <div class="custom-file mt-3">
+                    <input type="file" class="custom-file-input" id="inputImage" (change)="onImageSelected($event)">
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <button type="submit" class="btn btn-primary mt-2 offset-5" (click)="onSubmit()">
+        <i class="bi bi-save"></i>&nbsp;
+        {{buttonTitle}} </button>
+</div>
+
+<hr>
+
+<app-riders-table (editdeliveryGuy)="onEditClick($event)"></app-riders-table>
