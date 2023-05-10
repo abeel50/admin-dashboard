@@ -21,4 +21,8 @@ export class SideBarComponent implements OnInit {
     this.router.navigate(['/orders/'])
   }
 
+  navigateRiders() {
+    this.router.navigate(['/riders/']);
+  }
+
 }
