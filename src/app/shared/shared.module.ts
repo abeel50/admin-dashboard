@@ -7,6 +7,7 @@ import { ErrorsComponent } from './errors/errors.component';
 import { IsPackagePipe } from './pipes/isPackage.pipe';
 import { ProductCategoryPipe } from './pipes/product-category.pipe';
 import { OrderStatusPipe } from './pipes/orderStatus.pipe';
+import { DeliveryGuyPipe } from './pipes/deliveryGuy.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { OrderStatusPipe } from './pipes/orderStatus.pipe';
     // Pipes
     IsPackagePipe,
     ProductCategoryPipe,
-    OrderStatusPipe
+    OrderStatusPipe,
+    DeliveryGuyPipe
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { OrderStatusPipe } from './pipes/orderStatus.pipe';
     //Pipes
     IsPackagePipe,
     ProductCategoryPipe,
-    OrderStatusPipe
+    OrderStatusPipe,
+    DeliveryGuyPipe
   ]
 })
 export class SharedModule { }

@@ -4,4 +4,5 @@ export interface Order {
     totalPrice: number;
     address: string;
     status: number;
+    deliveryGuy: number | null;
 }

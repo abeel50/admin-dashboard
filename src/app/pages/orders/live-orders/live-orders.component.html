@@ -1,5 +1,30 @@
 <div class="container-fluid">
-  <button type="button" class="btn btn-primary mb-3 mt-3">Fetch Live Data</button>
+  <div class="row">
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary mb-3 mt-3">Fetch Live Data</button>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Total Orders</h5>
+          <p> <i class="bi bi-cart m-2" style="color: #0275d8	;"></i> {{totalOrders}} </p>
+        </div>
+        <div class="col-md-3">
+          <h5>Delivered</h5>
+          <p> <i class="bi bi-cart-check m-2" style="color: #5cb85c;"></i> {{delivered}} </p>
+        </div>
+        <div class="col-md-3">
+          <h5>Pending</h5>
+          <p> <i class="bi bi-hourglass-split m-2" style="color: #f0ad4e;"></i> {{pending}} </p>
+        </div>
+        <div class="col-md-3">
+          <h5>In Transit</h5>
+          <p><i class="bi bi-truck m-2" style="color: #5bc0de	;"></i> {{inTransit}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="form-group mb-3">
       <input type="text" class="form-control" placeholder="Search">
@@ -16,6 +41,7 @@
                   <th>Mobile Number</th>
                   <th>Total Price</th>
                   <th>Address</th>
+                  <th>Delivery Guy</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -26,6 +52,7 @@
                   <td> {{ord.phone}} </td>
                   <td> {{ord.totalPrice | currency}} </td>
                   <td> {{ord.address}} </td>
+                  <td> {{ord.deliveryGuy | deliveryGuyPipe}} </td>
                   <td>
                     <app-order-status [status]="ord.status"></app-order-status>
                   </td>
@@ -60,7 +87,7 @@
   <div class="modal-body">
     <div class="form-group">
       <label for="deliveryGuySelect">Select Delivery Guy:</label>
-      <ng-select id="deliveryGuySelect" [items]="deliveryGuys" bindLabel="name" bindValue="id"
+      <ng-select id="deliveryGuySelect" [items]="_deliveryGuys" bindLabel="name" bindValue="id"
         placeholder="Select a delivery guy">
       </ng-select>
     </div>
