@@ -1,3 +1,50 @@
-<p>
-  product-packages-table works!
-</p>
+<div style=" width: 90%; margin: 30px 30px;">
+  <form>
+    <div class="mb-3 row">
+      <div class="col-xs-3 col-sm-auto">
+        <input id="table-complete-search" type="text" class="form-control" name="searchTerm" placeholder="Search"
+          [(ngModel)]="service.searchTerm" />
+      </div>
+      <span class="col col-form-label" *ngIf="service.loading$ | async">Loading...</span>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" sortable="id">ID</th>
+          <th scope="col" sortable="title">Title</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Actions</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pack of packages$ | async">
+          <th scope="row">{{ pack.id }}</th>
+          <td>
+            <ngb-highlight [result]="pack.title" [term]="service.searchTerm"></ngb-highlight>
+          </td>
+          <td> {{pack.totalPrice | currency}} </td>
+
+          <td>
+            <i class="bi bi-pencil" (click)="onEditClick(pack)"></i>
+            &nbsp;&nbsp;&nbsp;
+            <i class="bi bi-trash3" style="color: red;"></i>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+      </ngb-pagination>
+
+      <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+        <option [ngValue]="5">5 items per page</option>
+        <option [ngValue]="10">10 items per page</option>
+        <option [ngValue]="20">20 items per page</option>
+      </select>
+    </div>
+  </form>
+</div>

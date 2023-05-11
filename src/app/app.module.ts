@@ -13,6 +13,7 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { SliderService } from './pages/config/common/slider-table/slider.service';
 import { LocationService } from './pages/config/common/location-table/location.service';
 import { DeliveryService } from './pages/delivery-riders/riders-table/rider.service';
+import { ProductPackageService } from './pages/product-packages/product-packages-table/product-package.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { DeliveryService } from './pages/delivery-riders/riders-table/rider.serv
   exports: [
 
   ],
-  providers: [CategoryService, SliderService, LocationService, DeliveryService, DecimalPipe],
+  providers: [CategoryService, SliderService, LocationService, DeliveryService, ProductPackageService, DecimalPipe,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

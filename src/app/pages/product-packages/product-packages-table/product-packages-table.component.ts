@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Package } from 'src/app/_interfaces';
+import { ProductPackageService } from './product-package.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-packages-table',
   templateUrl: './product-packages-table.component.html',
   styleUrls: ['./product-packages-table.component.css']
 })
-export class ProductPackagesTableComponent implements OnInit {
+export class ProductPackagesTableComponent {
 
-  constructor() { }
+  @Output() editFeatured = new EventEmitter();
 
-  ngOnInit() {
+  packages$: Observable<Package[]>;
+  total$: Observable<number>;
+
+
+  constructor(public service: ProductPackageService) {
+    this.packages$ = service.packages$;
+    this.total$ = service.total$;
   }
+
+  onEditClick(p: Package) {
+    this.editFeatured.emit(p);
+  }
+
 
 }
