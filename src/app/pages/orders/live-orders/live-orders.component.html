@@ -38,6 +38,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th>Customer Name</th>
                   <th>Mobile Number</th>
                   <th>Total Price</th>
                   <th>Address</th>
@@ -49,6 +50,7 @@
               <tbody>
                 <tr *ngFor="let ord of _orders">
                   <td>{{ord.id}}</td>
+                  <td> {{ord.customerName}} </td>
                   <td> {{ord.phone}} </td>
                   <td> {{ord.totalPrice | currency}} </td>
                   <td> {{ord.address}} </td>
@@ -71,7 +73,6 @@
   </div>
 </div>
 
-<!-- HTML code -->
 
 <!-- Button to open the modal -->
 
