@@ -8,6 +8,7 @@ import { IsPackagePipe } from './pipes/isPackage.pipe';
 import { ProductCategoryPipe } from './pipes/product-category.pipe';
 import { OrderStatusPipe } from './pipes/orderStatus.pipe';
 import { DeliveryGuyPipe } from './pipes/deliveryGuy.pipe';
+import { ProductPipe } from './pipes/product.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DeliveryGuyPipe } from './pipes/deliveryGuy.pipe';
     IsPackagePipe,
     ProductCategoryPipe,
     OrderStatusPipe,
-    DeliveryGuyPipe
+    DeliveryGuyPipe,
+    ProductPipe
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { DeliveryGuyPipe } from './pipes/deliveryGuy.pipe';
     IsPackagePipe,
     ProductCategoryPipe,
     OrderStatusPipe,
-    DeliveryGuyPipe
+    DeliveryGuyPipe,
+    ProductPipe
   ]
 })
 export class SharedModule { }

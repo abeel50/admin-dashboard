@@ -16,7 +16,7 @@
         <tr *ngFor="let pp of _packageProducts; index as i">
           <th scope="row">{{pp.id}}</th>
           <td>
-            {{ pp.productID }}
+            {{ pp.productID |productPipe }}
           </td>
           <td>
             {{ pp.weight }}

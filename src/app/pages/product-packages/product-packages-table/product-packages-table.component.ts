@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductPackagesTableComponent {
 
-  @Output() editFeatured = new EventEmitter();
+  @Output() editPackage = new EventEmitter();
 
   packages$: Observable<Package[]>;
   total$: Observable<number>;
@@ -22,7 +22,7 @@ export class ProductPackagesTableComponent {
   }
 
   onEditClick(p: Package) {
-    this.editFeatured.emit(p);
+    this.editPackage.emit(p);
   }
 
 
