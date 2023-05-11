@@ -70,6 +70,7 @@
           </div>
         </li>
 
+        <!-- Prodcuts -->
         <li class="mb-1">
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
             (click)="navigateProducts()" data-bs-toggle="collapse" data-bs-target="#product-collapse"
@@ -94,6 +95,24 @@
           </div>
         </li>
 
+        <!-- Packages -->
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            (click)="navigatePackages()" data-bs-toggle="collapse" data-bs-target="#packages-collapse"
+            aria-expanded="true">
+            Packages
+          </button>
+          <div class="collapse show" id="packages-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="/packages/" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Packages</a>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+        <!-- Orders -->
         <li class="mb-1">
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
             (click)="navigateOrders()" data-bs-toggle="collapse" data-bs-target="#order-collapse" aria-expanded="true">

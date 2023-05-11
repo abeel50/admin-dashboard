@@ -25,4 +25,8 @@ export class SideBarComponent implements OnInit {
     this.router.navigate(['/riders/']);
   }
 
+  navigatePackages() {
+    this.router.navigate(['/packages/']);
+  }
+
 }

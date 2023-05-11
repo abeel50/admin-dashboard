@@ -10,6 +10,7 @@ const routes: Routes = [
     children: [
       { path: '', loadChildren: () => import('../app/pages/config/config.module').then(m => m.ConfigModule), },
       { path: 'products', loadChildren: () => import('../app/pages/products/products.module').then(m => m.ProductsModule), },
+      { path: 'packages', loadChildren: () => import('../app/pages/product-packages/product-packages.module').then(m => m.ProductPackagesModule), },
       { path: 'orders', loadChildren: () => import('../app/pages/orders/orders.module').then(m => m.OrdersModule), },
       { path: 'riders', loadChildren: () => import('../app/pages/delivery-riders/delivery-riders.module').then(m => m.DeliveryRidersModule), },
     ]

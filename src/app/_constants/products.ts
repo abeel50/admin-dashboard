@@ -14,7 +14,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: 2,
-        title_english: "Product-1",
+        title_english: "Product-2",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
     ,
     {
         id: 3,
-        title_english: "Product-1",
+        title_english: "Product-3",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     ,
     {
         id: 4,
-        title_english: "Product-1",
+        title_english: "Product-4",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
     ,
     {
         id: 5,
-        title_english: "Product-1",
+        title_english: "Product-5",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
@@ -62,7 +62,7 @@ export const PRODUCTS: Product[] = [
     ,
     {
         id: 6,
-        title_english: "Product-1",
+        title_english: "Product-6",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     ,
     {
         id: 7,
-        title_english: "Product-1",
+        title_english: "Product-7",
         title_urdu: "مصنوعات 1",
         category: 1,
         subCategory: 2,
