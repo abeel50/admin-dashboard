@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PackageProduct } from 'src/app/_interfaces';
 
 @Component({
   selector: 'app-product-weight-table',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductWeightTableComponent implements OnInit {
 
+  @Input() _packageProducts: PackageProduct[] = [];
+
+  @Output() deleteProduct = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  onDeleteClick(id: number) {
+    this.deleteProduct.emit(id);
   }
 
 }

@@ -6,9 +6,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-1',
         totalPrice: 50,
         products: [
-            { productID: 1, weight: 10 },
-            { productID: 2, weight: 12 },
-            { productID: 3, weight: 19 },
+            { id: 1, productID: 1, weight: 10 },
+            { id: 2, productID: 2, weight: 12 },
+            { id: 3, productID: 3, weight: 19 },
         ]
     },
     {
@@ -16,9 +16,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-2',
         totalPrice: 25,
         products: [
-            { productID: 2, weight: 8 },
-            { productID: 3, weight: 15 },
-            { productID: 4, weight: 22 },
+            { id: 1, productID: 2, weight: 8 },
+            { id: 2, productID: 3, weight: 15 },
+            { id: 3, productID: 4, weight: 22 },
         ]
     },
     {
@@ -26,9 +26,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-3',
         totalPrice: 80,
         products: [
-            { productID: 1, weight: 13 },
-            { productID: 4, weight: 18 },
-            { productID: 5, weight: 25 },
+            { id: 1, productID: 1, weight: 13 },
+            { id: 2, productID: 4, weight: 18 },
+            { id: 3, productID: 5, weight: 25 },
         ]
     },
     {
@@ -36,9 +36,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-4',
         totalPrice: 35,
         products: [
-            { productID: 3, weight: 9 },
-            { productID: 5, weight: 14 },
-            { productID: 6, weight: 20 },
+            { id: 1, productID: 3, weight: 9 },
+            { id: 2, productID: 5, weight: 14 },
+            { id: 3, productID: 6, weight: 20 },
         ]
     },
     {
@@ -46,9 +46,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-5',
         totalPrice: 65,
         products: [
-            { productID: 2, weight: 11 },
-            { productID: 4, weight: 16 },
-            { productID: 6, weight: 21 },
+            { id: 1, productID: 2, weight: 11 },
+            { id: 2, productID: 4, weight: 16 },
+            { id: 3, productID: 6, weight: 21 },
         ]
     },
     {
@@ -56,9 +56,9 @@ export const PACKAGES: Package[] = [
         title: 'Packag-6',
         totalPrice: 45,
         products: [
-            { productID: 1, weight: 14 },
-            { productID: 3, weight: 17 },
-            { productID: 6, weight: 23 },
+            { id: 1, productID: 1, weight: 14 },
+            { id: 2, productID: 3, weight: 17 },
+            { id: 3, productID: 6, weight: 23 },
         ]
     }
 ]
