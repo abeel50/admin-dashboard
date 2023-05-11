@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PRODUCTS } from 'src/app/_constants';
 import { Product } from 'src/app/_interfaces';
 
@@ -10,9 +11,13 @@ import { Product } from 'src/app/_interfaces';
 export class ProductsListComponent implements OnInit {
 
   products: Product[] = PRODUCTS;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onAddClick() {
+    this.router.navigate(['/products/add']);
   }
 
 }
