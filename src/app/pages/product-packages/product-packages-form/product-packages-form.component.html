@@ -1,5 +1,62 @@
 <div class="container-fluid">
 
+  <form [formGroup]="form" style="width: 100%; margin: 30px 30px;">
+    <h4>Packages</h4>
+    <div class="row">
+      <div class="form-group col-lg-5">
+        <label for="title">Title</label>
+        <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title">
+        <app-errors [form_control]="f['title']" [isSubmitted]="isFormSubmit"></app-errors>
+      </div>
+      <div class="form-group col-lg-5">
+        <label for="totalPrice">Total Price</label>
+        <input formControlName="totalPrice" type="number" class="form-control" id="totalPrice"
+          placeholder="Total Price">
+        <app-errors [form_control]="f['totalPrice']" [isSubmitted]="isFormSubmit"></app-errors>
+      </div>
+    </div>
+
+    <!-- Sub Product-weight Form -->
+    <div [formGroup]="subForm" class="row mt-3">
+      <div class="form-group col-lg-3">
+        <label class="mb-1" for="title">Select Product</label>
+        <ng-select formControlName="productID" [items]="_products" bindLabel="title_english" bindValue="id"
+          [virtualScroll]="true" placeholder="Select Product">
+        </ng-select>
+        <app-errors [form_control]="sf['productID']" [isSubmitted]="isProductFormSubmit"></app-errors>
+      </div>
+      <div class="form-group col-lg-3">
+        <label class="mb-1" for="weight">Weight(kg)</label>
+        <input formControlName="weight" type="number" class="form-control" id="weight" placeholder="Weight">
+        <app-errors [form_control]="sf['weight']" [isSubmitted]="isProductFormSubmit"></app-errors>
+
+      </div>
+
+      <div class="form-group col-lg-2 mt-4 offset-1">
+        <button type="button" class="btn btn-primary" (click)="onSubmitSubForm()">
+          <i class="bi bi-plus-circle"></i>
+          Add
+        </button>
+      </div>
+
+    </div>
+    <!-- End of Sub Category form -->
+
+    <!-- Sub Category Table -->
+    <div class="row">
+      <div class="form-group col-lg-8 mt-2">
+        <app-product-weight-table [_packageProducts]="subProducts" (deleteProduct)="deleteSubProduct($event)">
+        </app-product-weight-table>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg mt-3" (click)="onSubmit()">
+      <i class="bi bi-save"></i>&nbsp;{{buttonTitle}}
+    </button>
+
+  </form>
+
   <hr>
   <app-product-packages-table></app-product-packages-table>
 </div>
