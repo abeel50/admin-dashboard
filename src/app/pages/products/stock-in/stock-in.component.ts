@@ -53,7 +53,17 @@ export class StockInComponent implements OnInit {
       quantity: this.f['quantity'].value, totalPrice: this.f['totalPrice'].value
     });
 
+    this.isFormSubmit = false;
     this.form.reset();
+  }
+
+  deleteStock(e: number) {
+    this.stockData = this.stockData.filter(item => item.id !== e);
+
+  }
+
+  onSave() {
+
   }
 
 

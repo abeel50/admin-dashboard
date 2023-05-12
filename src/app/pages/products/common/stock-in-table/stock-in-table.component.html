@@ -1,0 +1,32 @@
+<div class="container-fluid mt-3">
+
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="table table-responsive table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sd of stockData">
+            <td>{{sd.id}}</td>
+            <td>{{sd.productID|productPipe}}</td>
+            <td>{{sd.quantity}}</td>
+            <td>{{sd.totalPrice |currency}}</td>
+            <td><i class="bi bi-trash3" style="color: red;" (click)="onDeleteClick(sd.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<hr>

@@ -6,6 +6,7 @@ import { UpdatePriceListComponent } from './update-price-list/update-price-list.
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductPackingTableComponent } from './common/product-packing-table/product-packing-table.component';
 import { StockInComponent } from './stock-in/stock-in.component';
+import { StockInTableComponent } from './common/stock-in-table/stock-in-table.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { StockInComponent } from './stock-in/stock-in.component';
     ProductsRoutingModule,
   ],
   declarations: [ProductsListComponent, UpdatePriceListComponent, AddProductComponent, ProductPackingTableComponent,
-    StockInComponent]
+    StockInComponent, StockInTableComponent]
 })
 export class ProductsModule { }
