@@ -29,14 +29,15 @@ export class StockInComponent implements OnInit {
     this.form = this.formBuilder.group({
       productID: [null, [Validators.required]],
       quantity: [null, [Validators.required]],
+      unitPrice: [null, [Validators.required]],
       totalPrice: [{ value: null, disabled: true }, [Validators.required],]
     });
   }
 
   get f() { return this.form.controls; }
 
-  changeQuantity() {
-    let price = PRODUCTS.find(e => e.id === this.f['productID'].value)?.defaultPrice || 0;
+  calcTotalPrice() {
+    let price = this.f['unitPrice'].value || 0;
     let qt = this.f['quantity'].value;
     this.f['totalPrice'].setValue(price * qt);
   }
@@ -49,7 +50,7 @@ export class StockInComponent implements OnInit {
     }
 
     this.stockData.push({
-      id: this.stockData.length + 1, productID: this.f['productID'].value,
+      id: this.stockData.length + 1, productID: this.f['productID'].value, unitPrice: this.f['unitPrice'].value,
       quantity: this.f['quantity'].value, totalPrice: this.f['totalPrice'].value
     });
 
