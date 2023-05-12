@@ -5,10 +5,12 @@ import { UpdatePriceListComponent } from './update-price-list/update-price-list.
 import { AddProductComponent } from './add-product/add-product.component';
 import { StockInComponent } from './stock/stock-in/stock-in.component';
 import { StockOutComponent } from './stock/stock-out/stock-out.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: '', component: ProductsListComponent },
   { path: 'add', component: AddProductComponent },
+  { path: 'detail', component: ProductDetailComponent },
   { path: 'stock-in', component: StockInComponent },
   { path: 'stock-out', component: StockOutComponent },
   { path: 'update-list', component: UpdatePriceListComponent },

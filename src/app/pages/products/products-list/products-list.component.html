@@ -34,7 +34,8 @@
             <td>{{product.category | productCategoryPipe}}</td>
             <td>{{product.defaultPrice | currency}}</td>
             <td> {{product.imageUrl}} </td>
-            <td><i class="bi bi-pencil"></i> &nbsp;&nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
+            <td> <i (click)="navigateProductDetail()" class="bi bi-eye" style="color: #0275d8;"></i>&nbsp; <i
+                class="bi bi-pencil"></i> &nbsp;&nbsp;<i class="bi bi-trash3" style="color: red;"></i>
             </td>
           </tr>
         </tbody>

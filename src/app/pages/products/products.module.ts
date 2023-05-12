@@ -9,13 +9,15 @@ import { StockInComponent } from './stock/stock-in/stock-in.component';
 import { StockInTableComponent } from './common/stock-in-table/stock-in-table.component';
 import { StockOutComponent } from './stock/stock-out/stock-out.component';
 import { StockOutTableComponent } from './common/stock-out-table/stock-out-table.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   imports: [
     SharedModule,
     ProductsRoutingModule,
   ],
-  declarations: [ProductsListComponent, UpdatePriceListComponent, AddProductComponent, ProductPackingTableComponent,
+  declarations: [ProductsListComponent, ProductDetailComponent, UpdatePriceListComponent,
+    AddProductComponent, ProductPackingTableComponent,
     StockInComponent, StockInTableComponent, StockOutComponent, StockOutTableComponent]
 })
 export class ProductsModule { }

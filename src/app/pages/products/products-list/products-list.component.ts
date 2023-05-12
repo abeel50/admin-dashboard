@@ -20,4 +20,8 @@ export class ProductsListComponent implements OnInit {
     this.router.navigate(['/products/add']);
   }
 
+  navigateProductDetail() {
+    this.router.navigate(['/products/detail']);
+  }
+
 }
