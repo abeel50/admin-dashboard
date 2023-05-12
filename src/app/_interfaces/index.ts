@@ -11,3 +11,4 @@ export * from './order';
 export * from './packageProduct';
 export * from './package';
 export * from './stockIn';
+export * from './stockOut';
