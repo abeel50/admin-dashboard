@@ -1,3 +1,38 @@
-<p>
-  stock-in works!
-</p>
+<div class="container-flex">
+  <form [formGroup]="form" style="width: 100%; margin-left: 20px;">
+
+    <div class="row mt-3">
+      <h4>Stock In</h4>
+
+      <div class="form-group col-lg-3">
+        <label class="mb-1" for="weight">Product</label>
+        <ng-select formControlName="productID" [items]="_products" bindLabel="title_english" bindValue="id"
+          [virtualScroll]="true" placeholder="Select Product">
+        </ng-select>
+        <app-errors [form_control]="f['productID']" [isSubmitted]="isFormSubmit"></app-errors>
+      </div>
+
+      <div class="form-group col-lg-3">
+        <label class="mb-1" for="quantity">Quantity</label>
+        <input formControlName="quantity" type="number" min="1" class="form-control" id="info" placeholder="Quantity"
+          (change)="changeQuantity()" (keyup)="changeQuantity()">
+        <app-errors [form_control]="f['quantity']" [isSubmitted]="isFormSubmit"></app-errors>
+      </div>
+
+      <div class="form-group col-lg-3">
+
+        <label class="mb-1" for="price">Total Price</label>
+        <input formControlName="totalPrice" type="number" class="form-control" id="price" placeholder="Total Price">
+      </div>
+
+      <div class="form-group col-lg-3 mt-4 ">
+        <button type="button" class="btn btn-primary" (click)="addStock()">
+          <i class="bi bi-plus-circle"></i>
+          Add
+        </button>
+      </div>
+
+
+    </div>
+  </form>
+</div>
