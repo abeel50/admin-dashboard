@@ -10,3 +10,4 @@ export * from './packing';
 export * from './order';
 export * from './packageProduct';
 export * from './package';
+export * from './stockIn';
